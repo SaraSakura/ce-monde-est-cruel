@@ -22,11 +22,11 @@ class RudrigPlayer extends Player
     while ($round_num <= $this->result->getNbRound())
     {
         $round_num++;
-        if ($this->result->getChoicesFor($this->opponentSide) == $rockChoice)
+        if ($this->result->getChoicesFor($this->opponentSide) == parent::rockChoice())
             return parent::paperChoice();
-        if ($this->result->getChoicesFor($this->opponentSide) == $paperChoice)
+        if ($this->result->getChoicesFor($this->opponentSide) == parent::paperChoice())
             return parent::scissorsChoice();
-        if ($this->result->getChoicesFor($this->opponentSide) == $sisorsChoice)
+        if ($this->result->getChoicesFor($this->opponentSide) == parent::scissorsChoice())
             return parent::rockChoice();
     }
 
