@@ -8,6 +8,8 @@ use Hackathon\Game\Result;
  * Class RudrigPlayers
  * @package Hackathon\PlayerIA
  * @author Sara Mellouk
+ * Choix : J'ai choisi de mettre l'invers du choix précédant durant les 3 premiers tours
+ *         Puis je renvoie l'invers du choix le plus utilisé par l'ennemi
  */
 class RudrigPlayer extends Player
 {
@@ -36,6 +38,6 @@ class RudrigPlayer extends Player
                 return parent::paperChoice();
        }
        $round++;
-       return parent::scissorsChoice();
+       return parent::rockChoice();
     }
 };
