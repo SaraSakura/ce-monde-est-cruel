@@ -7,7 +7,7 @@ use Hackathon\Game\Result;
 /**
  * Class RudrigPlayers
  * @package Hackathon\PlayerIA
- * @author YOUR NAME HERE
+ * @author Sara Mellouk
  */
 class RudrigPlayer extends Player
 {
@@ -17,6 +17,18 @@ class RudrigPlayer extends Player
 
     public function getChoice()
     {
+    $round_num = 1;
+
+    while ($round_num <= $this->result->getNbRound())
+    {
+        $round_num++;
+        if ($this->result->getChoicesFor($this->opponentSide) == $rockChoice)
+            return parent::paperChoice();
+        if ($this->result->getChoicesFor($this->opponentSide) == $paperChoice)
+            return parent::scissorsChoice();
+        if ($this->result->getChoicesFor($this->opponentSide) == $sisorsChoice)
+            return parent::scissorsChoice();
+    }
         // -------------------------------------    -----------------------------------------------------
         // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
         // How to get the opponent Last Choice ?    $this->result->getLastChoiceFor($this->opponentSide) -- if 0 (first round)
