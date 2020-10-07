@@ -17,7 +17,7 @@ class RudrigPlayer extends Player
 
     public function getChoice()
     {
-
+       $round = 0;
        if ($this->result->getLastChoiceFor($this->opponentSide) === parent::rockChoice() )
            return parent::paperChoice();
        if ($this->result->getLastChoiceFor($this->opponentSide) === parent::paperChoice())
@@ -35,7 +35,7 @@ class RudrigPlayer extends Player
             if ($arr[4] > $arr[2] && $arr[4] > $arr[3])
                 return parent::paperChoice();
        }
-
+       $round++;
        return parent::rockChoice();
     }
 };
