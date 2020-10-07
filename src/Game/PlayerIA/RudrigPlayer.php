@@ -17,13 +17,18 @@ class RudrigPlayer extends Player
 
     public function getChoice()
     {
-        
+       $round = 0;
 
-        if ($this->result->getChoicesFor($this->opponentSide) === parent::rockChoice())
-            return parent::paperChoice();
-        if ($this->result->getChoicesFor($this->opponentSide) === parent::paperChoice())
-            return parent::scissorsChoice();
-        if ($this->result->getChoicesFor($this->opponentSide) === parent::scissorsChoice())
-            return parent::rockChoice();
+       if ($round > 0)
+       {
+            if ($this->result->getChoicesFor($this->opponentSide) === parent::rockChoice())
+                 return parent::paperChoice();
+            if ($this->result->getChoicesFor($this->opponentSide) === parent::paperChoice())
+                 return parent::scissorsChoice();
+            if ($this->result->getChoicesFor($this->opponentSide) === parent::scissorsChoice())
+                 return parent::rockChoice();
+       }
+       $round++;
+       return parent::rockChoice();
     }
 };
