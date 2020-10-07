@@ -17,20 +17,18 @@ class RudrigPlayer extends Player
 
     public function getChoice()
     {
-    $round_num = 1;
+        $rounds =
+        array('name' => value, 'score' => value, 'friend' => value, 'foe' => value
+        $this->result->getChoicesFor($this->opponentSide)
 
-    while ($round_num <= $this->result->getNbRound())
-    {
-        $round_num++;
-        if ($this->result->getChoicesFor($this->opponentSide) == parent::rockChoice())
+        if ($this->result->getChoicesFor($this->opponentSide) === parent::rockChoice())
             return parent::paperChoice();
-        if ($this->result->getChoicesFor($this->opponentSide) == parent::paperChoice())
+        if ($this->result->getChoicesFor($this->opponentSide) === parent::paperChoice())
             return parent::scissorsChoice();
-        if ($this->result->getChoicesFor($this->opponentSide) == parent::scissorsChoice())
+        if ($this->result->getChoicesFor($this->opponentSide) === parent::scissorsChoice())
             return parent::rockChoice();
-    }
 
-    return parent::rockChoice();
+
 
     }
 };
