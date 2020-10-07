@@ -36,6 +36,6 @@ class RudrigPlayer extends Player
                 return parent::paperChoice();
        }
        $round++;
-       return parent::rockChoice();
+       return parent::scissorsChoice();
     }
 };
